@@ -1,4 +1,4 @@
-
+window.CREATE = top.CREATE = ELEMENT => top.document.createElement(ELEMENT);
 window.ID = top.ID = ID => top.document.getElementById(ID);
 window.QUERY = top.QUERY = SELECTOR => top.document.querySelector(SELECTOR);
 window.QUERYALL = top.QUERYALL = ALL => top.document.querySelectorAll(ALL);
@@ -19,3 +19,6 @@ function parseLocalStorage(path) {
 };
 const last_played = parseLocalStorage(["__amplify__cache:game:last-played"]).data;
 const localData = parseLocalStorage([`__amplify__cache:notify:data:${pageData.current_user.id}`]).data;
+
+let localJSON = localStorage.getItem([`__amplify__kogama:user:data:${pageData.current_user.id}_V9.0.1`]);
+let userData = JSON.parse(JSON.parse(localJSON).data);
